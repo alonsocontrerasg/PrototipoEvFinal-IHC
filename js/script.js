@@ -1,31 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const appContainer = document.getElementById('app-container');
 
-    // --- TEMPLATES / SCREENS ---
-
-    const loginScreen = `
-        <div id="login-screen" class="screen d-flex flex-column justify-content-center align-items-center text-center vh-100">
-            <span class="material-icons" style="font-size: 80px; color: var(--primary-color);">pets</span>
-            <h1 class="mt-3">PetCare</h1>
-            <p class="lead text-muted mb-4">Tu mascota, en las mejores manos.</p>
-            <div class="w-100 px-4">
-                <div class="mb-3">
-                    <input type="email" class="form-control form-control-lg" placeholder="Correo electrónico">
-                </div>
-                <div class="mb-3">
-                    <input type="password" class="form-control form-control-lg" placeholder="Contraseña">
-                </div>
-                <button class="btn btn-primary btn-lg w-100" onclick="navigateTo('dashboard')">Iniciar Sesión</button>
-                <div class="mt-3">
-                    <a href="#" class="text-muted">¿Olvidaste tu contraseña?</a>
-                </div>
-            </div>
-            <div class="mt-5">
-                <span>¿No tienes cuenta? <a href="#">Regístrate aquí</a></span>
-            </div>
-        </div>
-    `;
-
     // --- NAVIGATION ---
     const bottomNavBar = (activeScreen) => {
         const items = [
@@ -276,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- ROUTER / NAVIGATION ---
 
     const routes = {
-        'login': loginScreen,
         'dashboard': dashboardScreen,
         'sitter-list': sitterListScreen,
         'profile': sitterProfileScreen,
@@ -287,7 +261,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function renderScreen(screenName) {
-        // Simple function to get the base screen name (e.g., 'profile' from 'profile/1')
         const baseScreenName = screenName.split('/')[0];
         if (routes[baseScreenName]) {
             appContainer.innerHTML = routes[baseScreenName];
@@ -303,5 +276,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- INITIAL RENDER ---
-    renderScreen('login');
+    renderScreen('dashboard');
 });
