@@ -1,0 +1,149 @@
+/* General Body Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#app-container {
+    max-width: 450px; /* Ancho típico de un dispositivo móvil */
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para que el nav sticky funcione correctamente */
+}
+
+.screen {
+    padding: 1.5rem;
+    flex-grow: 1;
+    overflow-y: auto; /* Permitir scroll en el contenido de la pantalla */
+    padding-bottom: 6rem; /* Espacio para la barra de navegación */
+}
+
+/* Theme Colors */
+:root {
+    --primary-color: #0d6efd; /* Azul Bootstrap */
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --verified-color: #198754; 
+    --light-bg: #f8f9fa;
+}
+
+/* Helper classes */
+.text-verified {
+    color: var(--verified-color);
+    font-weight: 500;
+}
+
+/* Cards Enhancement */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #343a40; /* Color de fondo oscuro */
+    border-top: 1px solid #495057; /* Borde más oscuro */
+    padding: 0.5rem 0;
+    position: fixed; /* Fixed instead of sticky for better mobile behavior */
+    bottom: 0;
+    width: 100%;
+    max-width: 450px; /* Asegura que coincida con el ancho de app-container */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2); /* Sombra más pronunciada */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #adb5bd; /* Color de texto más claro para el fondo oscuro */
+    font-size: 0.75rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+.nav-item .material-icons {
+    font-size: 24px;
+    margin-bottom: 0.2rem;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+/* Chat Screen Styles */
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    padding-right: 0.5rem; /* Pequeño padding para el scroll */
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 1.25rem;
+    max-width: 80%;
+    line-height: 1.4;
+    word-wrap: break-word; /* Para mensajes largos */
+}
+
+.message.sent {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message.received {
+    background-color: #e9ecef;
+    color: #212529;
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.chat-input .material-icons {
+    vertical-align: middle;
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 80px; /* Posiciona el botón sobre la barra de navegación */
+    right: calc((100% - 450px) / 2 + 25px); /* Ajusta la posición horizontalmente */
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1050; /* Por encima de la barra de navegación */
+    transition: background-color 0.2s ease-in-out;
+}
+
+.fab:hover {
+    background-color: #0b5ed7; /* Un poco más oscuro al pasar el mouse */
+}
