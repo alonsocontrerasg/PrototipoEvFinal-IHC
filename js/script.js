@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
              <div class="card text-center bg-light">
                 <div class="card-body">
-                    <h5 class="card-title">Bienvenido a PetCare</h5>
+                    <h5 class="card-title">Bienvenido a PetSociety</h5>
                     <p class="card-text">Tu central para el cuidado seguro y transparente de tus mascotas. Usa la barra de navegación inferior para empezar.</p>
                 </div>
             </div>
